@@ -1,0 +1,29 @@
+{
+  "EventType": "Delete Employee",
+  "UserId": 29,
+  "UserName": "Anwar",
+  "Comment": "Employee Deleted By User",
+  "Environment": {
+    "UserName": "A.Anwar",
+    "MachineName": "DESKTOP-K01UJHS",
+    "DomainName": "APEXUNITED",
+    "CallingMethodName": "Common.Repository`1.Remove()",
+    "AssemblyName": "Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "Culture": "en-US"
+  },
+  "Target": {
+    "Type": "Object",
+    "Old": {
+      "Id": 6,
+      "EmployeeNameAr": "حسن22gdfdfg",
+      "EmployeeNameEn": "Hamdyrtret",
+      "IsManger": true,
+      "JoinDate": "2020-08-05T00:00:00",
+      "DepartmentId": 1
+    }
+  },
+  "StartDate": "2020-08-05T14:20:02.5157974Z",
+  "EndDate": "2020-08-05T14:20:02.5159322Z",
+  "Duration": 0,
+  "Action": "Add"
+}

@@ -1,0 +1,26 @@
+{
+  "EventType": "Delete Department",
+  "UserId": 29,
+  "UserName": "Anwar",
+  "Comment": "Department Deleted By User",
+  "Environment": {
+    "UserName": "A.Anwar",
+    "MachineName": "DESKTOP-K01UJHS",
+    "DomainName": "APEXUNITED",
+    "CallingMethodName": "Common.Repository`1.Remove()",
+    "AssemblyName": "Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "Culture": "en-US"
+  },
+  "Target": {
+    "Type": "Object",
+    "Old": {
+      "Id": 4,
+      "DepartmentEn": "test test test",
+      "DepartmentAr": "تجريبية3333"
+    }
+  },
+  "StartDate": "2020-08-05T13:34:35.8864009Z",
+  "EndDate": "2020-08-05T13:34:35.8865395Z",
+  "Duration": 0,
+  "Action": "Add"
+}

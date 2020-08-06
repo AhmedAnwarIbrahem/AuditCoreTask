@@ -1,0 +1,32 @@
+﻿{
+  "ReRoutes": [
+    //Lookups
+    {
+      "DownstreamPathTemplate": "/api/Employees/GetAll",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44420
+        }
+      ],
+      "UpstreamPathTemplate": "/GetAll",
+
+      "Key": "Employees"
+    }
+  ],
+  //"SwaggerEndPoints": [
+  //  //lookups
+  //  {
+  //    "Key": "lookups",
+  //    "Config": [
+  //      {
+  //        "Name": "Lookups API",
+  //        "Version": "v1",
+  //        "Url": "http://localhost:80/lookups/swagger/v1/swagger.json"
+  //      }
+  //    ]
+  //  }
+  //],
+  "GlobalConfiguration": { "BaseUrl": "https://localhost:44388/" }
+}
