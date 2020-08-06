@@ -32,11 +32,13 @@ namespace HrTasks.Services.Services
             _unitofWork.EmployeeTaskRepository.Add(EmployeeTask);
             _unitofWork.SaveChanges();
         }
-        public void Update(EmployeeTaskDto EmployeeTaskDto)
+        public void Update(EmployeeTaskDto employeeTaskDto)
         {
-            var EmployeeTask = _unitofWork.EmployeeTaskRepository.Get(EmployeeTaskDto.Id);
-            _mapper.Map(EmployeeTaskDto, EmployeeTask);
-
+            //var EmployeeTask = _unitofWork.EmployeeTaskRepository.Get(employeeTaskDto.Id);
+            //_mapper.Map(employeeTaskDto, EmployeeTask);
+            var employeeTaskOld = _unitofWork.EmployeeTaskRepository.Get(employeeTaskDto.Id);
+            var employeeTaskNew = _mapper.Map<EmployeeTask>(employeeTaskDto);
+            _unitofWork.EmployeeTaskRepository.Update(employeeTaskNew, employeeTaskOld);
             _unitofWork.SaveChanges();
         }
         public void Delete(int id)

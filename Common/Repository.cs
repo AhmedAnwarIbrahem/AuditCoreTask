@@ -16,8 +16,6 @@ namespace Common
     {
         protected readonly DbContext Context;
         private readonly DbSet<T> dbSet;
-
-
         private readonly IHttpContextAccessor httpContextAccessor;
         public Repository(DbContext context)
         {
@@ -27,9 +25,8 @@ namespace Common
             //Audit.Core.Configuration.Setup().UseFileLogProvider(config => config
             //    .DirectoryBuilder(_ => $@"C:\Logs\{DateTime.Now:yyyy-MM-dd}")
             //    .FilenameBuilder(auditEvent => $"{auditEvent.Environment.UserName}_{DateTime.Now.Ticks}.json"));
-            Audit.Core.Configuration.DataProvider = new SqlDataProvider()
+            Configuration.DataProvider = new SqlDataProvider()
             {
-
                 ConnectionString = "data source=.;initial catalog=AuditLogs;integrated security=true;",
                 Schema = "dbo",
                 TableName = "Audits",

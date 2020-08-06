@@ -37,19 +37,9 @@ namespace HrTasks.Services.Services
         }
         public async void Update(DepartmentDto DepartmentDto)
         {
-            var department = _unitofWork.DepartmentRepository.Get(DepartmentDto.Id);
-            var options = new AuditScopeOptions()
-            {
-                EventType = "Update departments",
-                TargetGetter = () => department,
-                ExtraFields = new { Action = "Update" },
-                AuditEvent = new CustomAuditEvent() { UserId = 29, UserName = "Anwar", Comment = "Department Updated By User" },
-            };
-            using (var scope = await AuditScope.CreateAsync(options))
-            {
-                _mapper.Map(DepartmentDto, department);
-            }
-
+            var departmentOld = _unitofWork.DepartmentRepository.Get(DepartmentDto.Id);
+            var departmentNew = _mapper.Map<Department>(DepartmentDto);
+            _unitofWork.DepartmentRepository.Update(departmentNew, departmentOld);
             _unitofWork.SaveChanges();
         }
         public void Delete(int id)

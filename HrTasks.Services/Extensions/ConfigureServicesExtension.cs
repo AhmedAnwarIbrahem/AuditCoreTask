@@ -33,10 +33,10 @@ namespace HrTasks.Services.Extensions
                 (options => options.UseSqlServer(connectionString).EnableSensitiveDataLogging());
             services.AddScoped<DbContext, HrTasksContext>();
 
-            var auditConnectionString = configuration.GetConnectionString("Audit");
+            //var auditConnectionString = configuration.GetConnectionString("Audit");
 
-            services.AddDbContext<AuditLogsContext>
-               (options => options.UseSqlServer(auditConnectionString).EnableSensitiveDataLogging());
+            //services.AddDbContext<AuditLogsContext>
+            //   (options => options.UseSqlServer(auditConnectionString).EnableSensitiveDataLogging());
         }
         private static void ServicesConfig(this IServiceCollection services)
         {
