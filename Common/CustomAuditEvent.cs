@@ -10,5 +10,8 @@ namespace Common
         public int UserId { get; set; } = 0;
         public string UserName { get; set; }
         public string Comment { get; set; }
+        public string Action { get; set; }
+
+        
     }
 }

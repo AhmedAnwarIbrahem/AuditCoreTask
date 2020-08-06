@@ -1,5 +1,4 @@
 ﻿using HrTasks.Model;
-using HrTasks.Model.Audit;
 using HrTasks.ModelAccess.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -14,27 +13,25 @@ namespace HrTasks.ModelAccess
   public  class UnitofWork:IUnitofWork
     {
         private readonly HrTasksContext _context;
-        private readonly AuditLogsContext _auditContext;
 
 
-        public UnitofWork(HrTasksContext Context, AuditLogsContext auditContext)
+        public UnitofWork(HrTasksContext Context)
         {
             _context = Context;
-            _auditContext = auditContext;
         }
 
         public EmployeeRepository EmployeeRepository
         {
             get
             {
-                return new EmployeeRepository(_context, _auditContext);
+                return new EmployeeRepository(_context);
             }
         }
         public DepartmentRepository DepartmentRepository
         {
             get
             {
-                return new DepartmentRepository(_context, _auditContext);
+                return new DepartmentRepository(_context);
             }
         }
 
@@ -42,7 +39,7 @@ namespace HrTasks.ModelAccess
         {
             get
             {
-                return new EmployeeTaskRepository(_context, _auditContext);
+                return new EmployeeTaskRepository(_context);
             }
         }
 
@@ -52,6 +49,7 @@ namespace HrTasks.ModelAccess
         }
         public int SaveChanges()
         {
+            //_auditContext.SaveChanges();
             return _context.SaveChanges();
         }
     }

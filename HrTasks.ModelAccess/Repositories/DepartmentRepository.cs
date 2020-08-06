@@ -9,7 +9,7 @@ namespace HrTasks.ModelAccess.Repositories
 {
     public class DepartmentRepository : Repository<Department>
     {
-        public DepartmentRepository(HrTasksContext context, AuditLogsContext auditContext) : base(context, auditContext)
+        public DepartmentRepository(HrTasksContext context) : base(context)
         {
         }
     }

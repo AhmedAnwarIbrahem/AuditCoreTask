@@ -18,5 +18,8 @@ namespace Common
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int ActionId { get; set; }
+
+        //public virtual ICollection<AuditTraget> Tasks { get; set; }
+
     }
 }

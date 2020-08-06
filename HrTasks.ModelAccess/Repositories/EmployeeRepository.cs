@@ -9,7 +9,7 @@ namespace HrTasks.ModelAccess.Repositories
 {
     public class EmployeeRepository : Repository<Employee>
     {
-        public EmployeeRepository(HrTasksContext context, AuditLogsContext auditContext) : base(context, auditContext)
+        public EmployeeRepository(HrTasksContext context) : base(context)
         {
         }
     }

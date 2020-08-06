@@ -1,5 +1,4 @@
-﻿using HrTasks.Model.Audit;
-using HrTasks.ModelAccess.Repositories;
+﻿using HrTasks.ModelAccess.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
